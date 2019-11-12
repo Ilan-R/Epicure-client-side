@@ -17,6 +17,5 @@ export class CarouselComponent implements OnInit {
       this.restaurants = rest;
     });
   }
-  onclick() {
-  }
+  onclick() {}
 }
