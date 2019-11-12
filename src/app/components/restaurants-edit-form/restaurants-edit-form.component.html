@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>Restaurant editing:</h2>
+<mat-dialog-content class="form" [formGroup]="group" (ngSubmit)="onSubmit()">
+    <label>
+        Restaurants name:
+        <input type=" text" formControlName="name" required>
+    </label>
+    <label>
+        Chefs name:
+        <input type="text" formControlName="chef" required>
+    </label>
+</mat-dialog-content>
+<mat-dialog-actions>
+        <button mat-button mat-dialog-close (click)="delete()">Delete restaurant</button>
+    <button mat-button mat-dialog-close (click)="onSubmit()" type="submit" [disabled]="!group.valid">Submit changes</button>
+</mat-dialog-actions>

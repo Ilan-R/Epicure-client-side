@@ -1,0 +1,36 @@
+.container{
+    //height: 945px;
+    .chef-details{
+        padding: 5%;
+        .header{
+            padding: 23% 0 3% 0%;
+        }
+    }
+    .text{
+            font-size: 14px;
+            font-weight: 200;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 1.5px;
+            text-align: center;
+            color: var(--black);
+          
+    }
+    .image{
+        position: relative;
+        
+        .name{
+            width: 100%;
+            position: absolute;
+            padding: 3% 0 3% 0;
+            background-color: rgba(255,255,255,0.8);
+            
+        }
+    }
+    .description{
+       padding: 10% 3% 0% 3%;
+    }
+}
+
+

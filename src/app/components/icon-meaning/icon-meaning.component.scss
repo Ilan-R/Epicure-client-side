@@ -1,0 +1,22 @@
+.container {
+  height: 134px;
+  opacity: 0.9;
+  background-color: #fafafa;
+  .image{
+      position: relative;
+  }
+  .text {
+    font-size: 14px;
+    font-weight: 100;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-align: center;
+    color: var(--black);
+    padding: 10px;
+  }
+  .section {
+    width: 33.3%;
+  }
+}

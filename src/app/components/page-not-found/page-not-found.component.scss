@@ -1,0 +1,11 @@
+.anchor{
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-size: 25px ;
+    &:link{
+        color: gray;
+        text-decoration: none;
+    }
+    &:visited{
+        color: gray;
+    }
+}

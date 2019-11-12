@@ -1,0 +1,46 @@
+.container {
+  opacity: 0.9;
+  background-color: #fafafa;
+
+  .about-text {
+    font-size: 14px;
+    font-weight: 100;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.08px;
+    text-align: center;
+    color: var(--black);
+    .header {
+      padding: 8% 10% 2% 10%;
+    }
+
+    .text {
+      padding: 0 10% 0 10%;
+    }
+  }
+  svg {
+    padding: 1.4%;
+    height: 40px;
+  }
+  .image {
+    padding: 8.5%;
+    text-align: center;
+  }
+  .app-stores {
+    padding-bottom: 15%;
+  }
+}
+
+.desktop {
+  .header {
+    text-align: left;
+  }
+  .text {
+    text-align: left;
+  }
+  .app-stores
+  {
+    padding: 0% 0% 1% 7%;
+  }
+}

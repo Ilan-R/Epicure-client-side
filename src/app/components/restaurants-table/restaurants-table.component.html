@@ -1,0 +1,22 @@
+<table datatable class="row-border hover">
+    <thead>
+        <tr>
+            <th>Restaurant's name</th>
+            <th>Chef's name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr (click)="onClick(rest)" *ngFor="let rest of restaurants">
+            <td>{{rest.name}}</td>
+            <td>{{rest.chef}}</td>
+        </tr>
+    </tbody>
+</table>
+<button style="margin: 5px;" (click)="onClick({name: '',chef: ''})">Add a restaurant</button>
+<div class="container" [class.loading]="loading == true" fxLayout="column" fxLayoutAlign="center center">
+    <h1 [hidden]="!loading">Working on it!!!</h1>
+    <div style="height: 10em;" [hidden]="!loading">
+
+        <ng-lottie [options]="options"></ng-lottie>
+    </div>
+</div>

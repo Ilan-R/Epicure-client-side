@@ -1,0 +1,21 @@
+.container{
+    margin-top: 5px;
+    position: relative;
+}
+.gray-box {
+    position: absolute;
+    background: rgba(255,255,255,0.88);
+    height: 46.46%;
+    width: 89.4%;
+    color: white;
+  }
+  .text-box{
+    font-weight: 300;
+  }
+  .search-box{
+      border-radius: 4px;
+      border: 0.4px solid rgba(0 ,0 , 0 ,0.11);;
+      font-weight: 100;
+      padding: 6px 3px 6px 3px
+      
+  }
