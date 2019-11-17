@@ -1,21 +1,73 @@
-.container{
-    margin-top: 5px;
-    position: relative;
-}
-.gray-box {
+.container {
+  //margin-top: 5px;
+  position: relative;
+  .gray-box {
     position: absolute;
-    background: rgba(255,255,255,0.88);
+    background: rgba(255, 255, 255, 0.88);
     height: 46.46%;
     width: 89.4%;
-    color: white;
+    &.desktop{
+      height: 32%;
+      width: 55%;
+    }
   }
-  .text-box{
-    font-weight: 300;
+  .text-box {
+    font-size: 16px;
+    font-weight: 200;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-align: center;
+    color: var(--black);
+    &.desktop{
+        font-size: 35px;
+        font-weight: 100;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: 1.97px;
+        text-align: center;
+        color: var(--black);
+    }
   }
-  .search-box{
-      border-radius: 4px;
-      border: 0.4px solid rgba(0 ,0 , 0 ,0.11);;
-      font-weight: 100;
-      padding: 6px 3px 6px 3px
-      
+  .search-field {
+    padding: 2.3% 0 2.3% 0;
+    width: 80%;
+    border-radius: 4px;
+    border: solid 1px #a9a6a4;
+    background-color: rgba(255, 255, 255, 0.11);
+    &.desktop{
+      width: 65%;
+      padding: 1.5% 0 1.5% 0;
+    }
+    .svg-desktop{
+      padding: 0 4% 0 4%;
+    }
+    .search-text {
+      opacity: 0.64;
+      font-size: 12px;
+      font-weight: 200;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: 0.93px;
+      text-align: center;
+      color: var(--black);
+      &.desktop{
+          opacity: 0.53;
+          font-size: 22px;
+          font-weight: 100;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: 1.57px;
+          text-align: center;
+          color: var(--black);
+      }
+    }
   }
+  .image {
+    max-width: 100%;
+  }
+}

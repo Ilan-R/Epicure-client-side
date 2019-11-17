@@ -7,7 +7,7 @@
   }
   .text {
     font-size: 14px;
-    font-weight: 100;
+    font-weight: 200;
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -15,6 +15,16 @@
     text-align: center;
     color: var(--black);
     padding: 10px;
+    &.desktop{
+        font-size: 30px;
+        font-weight: 100;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 2.14px;
+        text-align: center;
+        color: var(--black);
+    }
   }
   .section {
     width: 33.3%;

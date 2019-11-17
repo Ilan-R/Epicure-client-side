@@ -1,5 +1,6 @@
 .header {
   background: transparent;
+  height: 45px;
   .section {
     width: 33.3%;
   }
@@ -10,28 +11,85 @@
   height: 53px;
   .section {
     width: 50%;
-
   }
-  .left{
-      font-size: 27px !important;
-      font-weight: 100;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: normal;
-      letter-spacing: 1.35px;
-      color: var(--black);
+
+  .left {
+    padding-left: 5%;
+    .container {
+      align-items: center;
+      width: 650px;
+      .home-text {
+        font-size: 27px;
+        font-weight: 200;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 1.35px;
+        color: var(--black);
+        padding: 0 1% 0 1%;
+      }
+      .text {
+        font-size: 18px;
+        font-weight: 200;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 1.92px;
+        color: var(--black);
+        padding: 0 1% 0 1%;
+      }
+    }
+    .icon-anchor {
+      height: 65%;
+      .center-icon {
+        // display: block;
+        // width: auto;
+        height: 100%;
+      }
+    }
+    
+  }
+  .right {
+    .search-field {
+      width: 58%;
+      padding: 1% 1% 1% 1%;
+      margin-right: 1%;
+      object-fit: contain;
+      border-radius: 4px;
+      border: solid 0.5px #a9a6a4;
+      background-color: rgba(255, 255, 255, 0.11);
+      .search-text {
+        opacity: 0.64;
+        font-size: 18px;
+        font-weight: 200;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 0.93px;
+        text-align: center;
+        color: var(--black);
+      }
+    }
+    .search-svg{
+      padding-left: 13%;
+    }
+    .user-button,
+    .menu-button {
+      padding: 0 1% 0 1%;
+    }
   }
 }
 
 .buttons {
   background-color: transparent;
   border: none;
-  
-  &:hover {
-    cursor: pointer;
-  }
   &:focus {
     outline: none;
   }
 }
-
+button {
+  cursor: pointer;
+}
+a {
+  cursor: pointer;
+}

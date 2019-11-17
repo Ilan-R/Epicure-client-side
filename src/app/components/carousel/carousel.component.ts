@@ -1,6 +1,6 @@
-import { RestaurantsService } from './../../services/restaurants.service';
-import { Restaurant } from './../../services/restaurant';
-import { Component, OnInit } from '@angular/core';
+import {RestaurantsService} from '../../services/restaurants.service';
+import {Restaurant} from '../../services/restaurant';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-carousel',
@@ -9,13 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarouselComponent implements OnInit {
   restaurants: Restaurant[] = [];
-  SlideOptions = { center: false, items: 2, loop: false, margin: 20, dots: false, autoWidth: false };
-  constructor(private restService: RestaurantsService) { }
+  SlideOptions = {center: false, items: 2, loop: false, dots: false, autoWidth: true};
+
+  constructor(private restService: RestaurantsService) {
+  }
 
   ngOnInit() {
     this.restService.getAllRestaurants().subscribe(rest => {
       this.restaurants = rest;
     });
   }
-  onclick() {}
+
+  onclick() {
+  }
 }
+
+
