@@ -1,6 +1,6 @@
 .header {
   background: transparent;
-  height: 45px;
+  height: 2.8rem;
   .section {
     width: 33.3%;
   }
@@ -8,7 +8,7 @@
 
 .header-desktop {
   background: transparent;
-  height: 53px;
+  height: 4rem;
   .section {
     width: 50%;
   }
@@ -36,7 +36,7 @@
         line-height: normal;
         letter-spacing: 1.92px;
         color: var(--black);
-        padding: 0 1% 0 1%;
+        padding: 1% 1% 0 1%;
       }
     }
     .icon-anchor {
@@ -47,7 +47,7 @@
         height: 100%;
       }
     }
-    
+
   }
   .right {
     .search-field {

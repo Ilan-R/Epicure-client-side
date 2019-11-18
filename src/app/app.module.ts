@@ -7,9 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule,  MatDialogModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MobileHeaderComponent } from './components/mobile-header/mobile-header.component';
+import { HeaderComponent } from './components/header/header.component';
 import { MobileSearchComponent } from './components/mobile-search/mobile-search.component';
-import { MobileMainComponent } from './components/mobile-main/mobile-main.component';
+import { MainComponent } from './components/main/main.component';
 import { MobileSelectorComponent } from './components/mobile-selector/mobile-selector.component';
 import { OwlModule } from 'ngx-owl-carousel';
 import { CarouselComponent } from './components/carousel/carousel.component';
@@ -33,9 +33,9 @@ export function playerFactory() {
 @NgModule({
   declarations: [
     AppComponent,
-    MobileHeaderComponent,
+    HeaderComponent,
     MobileSearchComponent,
-    MobileMainComponent,
+    MainComponent,
     MobileSelectorComponent,
     CarouselComponent,
     RestaurantDetailComponent,

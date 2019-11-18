@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { AnimationOptions } from 'ngx-lottie';
-import { Observable, Subject, Subscription } from 'rxjs';
-import { Restaurant } from './../../services/restaurant';
-import { RestaurantsService } from './../../services/restaurants.service';
-import { RestaurantsEditFormComponent } from './../restaurants-edit-form/restaurants-edit-form.component';
+import { Subject, Subscription } from 'rxjs';
+import { Restaurant } from '../../services/restaurant';
+import { RestaurantsService } from '../../services/restaurants.service';
+import { RestaurantsEditFormComponent } from '../restaurants-edit-form/restaurants-edit-form.component';
+import 'datatables.net';
 
 @Component({
   selector: 'app-restaurants-table',

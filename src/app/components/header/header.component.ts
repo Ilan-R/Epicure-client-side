@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-mobile-header',
-  templateUrl: './mobile-header.component.html',
-  styleUrls: ['./mobile-header.component.scss']
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
-export class MobileHeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit {
 
   constructor() { }
 

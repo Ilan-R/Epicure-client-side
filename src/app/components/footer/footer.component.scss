@@ -1,14 +1,30 @@
 
 .container {
-    font-size: 12px;
-    font-weight: 200;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: 0.76px;
-    text-align: center;
-    color: var(--black);
-    .div{
-        padding: 3%;
+  height: 8rem;
+  font-size: 12px;
+  font-weight: 200;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.76px;
+  text-align: center;
+  color: var(--black);
+
+  &.desktop {
+    height: 6rem;
+  }
+
+  .terms {
+    padding: 4.8% 0 4.8% 0;
+    &.desktop {
+      padding: 0 2.9% 0 2.9%;
     }
   }
+
+  .div {
+    // padding: 3%;
+    &.desktop {
+      // padding: 2.1%;
+    }
+  }
+}

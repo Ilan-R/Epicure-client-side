@@ -1,46 +1,84 @@
 .container {
   opacity: 0.9;
   background-color: #fafafa;
+  height: 38rem;
 
-  .about-text {
-    font-size: 14px;
-    font-weight: 200;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: 1.08px;
-    text-align: center;
-    color: var(--black);
-    .header {
-      padding: 8% 10% 2% 10%;
-    }
+  &.desktop {
+    height: 33rem;
 
-    .text {
-      padding: 0 10% 0 10%;
+  }
+
+  .top {
+    .about-text {
+      font-size: 14px;
+      font-weight: 200;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: 1.08px;
+      text-align: center;
+      color: var(--black);
+
+      .header {
+        padding: 8% 10% 2% 10%;
+      }
+
+      .text {
+        padding: 0 10% 0 10%;
+      }
     }
   }
-  svg {
-    padding: 1.4%;
-    height: 40px;
-  }
+
   .image {
     padding: 8.5%;
     text-align: center;
   }
+
   .app-stores {
-    padding-bottom: 15%;
+    max-width: 71%;
+  }
+
+  .svg-im {
+    width: fit-content;
+    overflow: auto;
   }
 }
 
 .desktop {
+  .image {
+    width: 45%;
+    padding: 10% 15% 0 0;
+  }
+
   .header {
+    font-size: 30px;
+    font-weight: 100;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.89px;
+    color: var(--black);
     text-align: left;
   }
+
   .text {
+    font-size: 22px;
+    font-weight: 100;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.69px;
+    color: var(--black);
     text-align: left;
   }
-  .app-stores
-  {
-    padding: 0% 0% 1% 7%;
+
+  .app-stores {
+    max-width: 45%;
+    padding: 1% 19% 0% 7%;
+  }
+
+  .svg-im {
+    width: fit-content;
+    overflow: auto;
   }
 }
