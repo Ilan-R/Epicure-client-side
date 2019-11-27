@@ -1,13 +1,14 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-mobile-header',
+  selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   navClick() {
     console.log('navclick');
@@ -23,10 +24,12 @@ export class HeaderComponent implements OnInit {
 
   userClick() {
     console.log('userclick');
+    this.router.navigate(['login']);
   }
 
   menuClick() {
     console.log('menuclick');
+    this.router.navigate(['table']);
   }
   ngOnInit() {
   }

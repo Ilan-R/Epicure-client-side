@@ -1,4 +1,4 @@
-<div class="header" fxLayout="row" fxShow fxHide.gt-md>
+<div class="header" fxLayout="row" fxShow fxHide.gt-sm>
     <div class="section" fxLayoutAlign="start center">
         <button class="nav-button buttons" (click)="navClick()">
             <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 20 14">
@@ -48,7 +48,7 @@
 
 
 
-<div class="header-desktop" fxLayout="row" fxHide fxShow.gt-md>
+<div class="header-desktop" fxLayout="row" fxHide fxShow.gt-sm>
 
     <div class="left section" fxLayout="row" fxLayoutAlign="start center">
 
@@ -59,32 +59,8 @@
             <div class="text">Chefs</div>
         </div>
     </div>
-
-    <!--
-
-
-
-<div class="header-desktop" fxLayout="row" fxHide fxShow.gt-md>
-
-    <div class="left section" fxLayout="row" fxLayoutAlign="start center">
-        <div style="width: 8.5%"></div>
-        <a class="icon-anchor" href=#><img src="assets/center-icon@3x.png" class="center-icon"></a>
-        <a class="home-text">
-            <div>Epicure</div>
-        </a>
-        <a class="text">
-            <div>Restaurants</div>
-        </a>
-        <a class="text">
-            <div>Chefs</div>
-        </a>
-    </div> -->
-
-
-
-
     <div class="right section" fxLayout="row" fxLayoutAlign="end center">
-        <div class="search-field text" fxLayout="row" fxLayoutAlign="space-evenly center">
+        <div class="search-field text" fxLayout="row" fxLayoutAlign="space-between center">
             <div class="search-text"> Search for restaurant cuisine, chef</div>
             <svg class="search-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                 <g fill="#000" fill-rule="evenodd">
@@ -110,6 +86,5 @@
                 </g>
             </svg>
         </a>
-        <div style="width: 8.5%"></div>
     </div>
 </div>

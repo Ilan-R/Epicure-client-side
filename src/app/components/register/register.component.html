@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>Register</h2>
+<mat-dialog-content fxLayout="column" fxLayoutGap="5px" class="registerForm" [formGroup]="fg" (ngSubmit)="onSubmit()">
+    <label>
+        First name:
+        <input matInput type=" text" formControlName="first_name" required>
+    </label>
+    <label>
+        Last name:
+        <input matInput type="text" formControlName="last_name" required>
+    </label>
+    <label>
+        Email address:
+        <input matInput type="email" formControlName="email" required>
+    </label>
+    <label>
+        Password:
+        <input matInput type="password" formControlName="password" required>
+    </label>
+</mat-dialog-content>
+<mat-dialog-actions>
+<button mat-button mat-dialog-close (click)="onSubmit()" type="submit" [disabled]="!fg.valid">Submit changes</button>
+</mat-dialog-actions>

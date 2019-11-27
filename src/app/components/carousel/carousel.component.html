@@ -1,11 +1,7 @@
-<div class='container-fluid'>
+<div  class='container-fluid' ngClass.gt-sm="desktop">
   <owl-carousel [options]="SlideOptions" [items] = restaurants [carouselClasses]="['owl-theme', 'sliding']">
     <div class="item" *ngFor="let item of restaurants">
-      <div style="align-content: center">
         <app-restaurant-detail [restaurant] = "item"></app-restaurant-detail>
-        <!-- {{item.name}} -->
-        
-      </div>
     </div>
   </owl-carousel>
 </div>

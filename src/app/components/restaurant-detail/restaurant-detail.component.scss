@@ -1,6 +1,12 @@
 .container{
     width: fit-content;
     display: table;
+    width: 206px;
+     height: 338px;
+     &.desktop{
+        width: 360px;
+         height: 357px;
+     }
 }
 .rect-div {
     opacity: 0.7;

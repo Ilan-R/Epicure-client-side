@@ -1,4 +1,4 @@
-import { Restaurant } from './../../services/restaurant';
+import { Restaurant } from '../../interfaces/restaurant';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -12,7 +12,6 @@ export class RestaurantDetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.restaurant);
   }
 
 }

@@ -1,3 +1,5 @@
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { RestaurantsEditFormComponent } from './components/restaurants-edit-form/restaurants-edit-form.component';
 import { RestaurantsTableComponent } from './components/restaurants-table/restaurants-table.component';
@@ -8,6 +10,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [{path: '', pathMatch: 'full', redirectTo: 'main'},
 {path: 'main', component: MainComponent},
+{path: 'login', component: LoginComponent},
+{path: 'register', component: RegisterComponent},
 {path: 'table', component: RestaurantsTableComponent},
 {path: 'edit', component: RestaurantsEditFormComponent},
 {path: '**', component: PageNotFoundComponent}];

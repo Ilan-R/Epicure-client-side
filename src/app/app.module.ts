@@ -4,11 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule,  MatDialogModule } from '@angular/material';
+import { MatButtonModule,  MatDialogModule, MatCardModule, MatInputModule } from '@angular/material';
+import {MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeaderComponent } from './components/header/header.component';
-import { MobileSearchComponent } from './components/mobile-search/mobile-search.component';
+import { SearchComponent } from './components/search/search.component';
 import { MainComponent } from './components/main/main.component';
 import { MobileSelectorComponent } from './components/mobile-selector/mobile-selector.component';
 import { OwlModule } from 'ngx-owl-carousel';
@@ -27,6 +28,9 @@ import { LottieModule } from 'ngx-lottie';
 import { DataTablesModule } from 'angular-datatables';
 import player from 'lottie-web';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { MapComponent } from './components/map/map.component';
 export function playerFactory() {
   return player;
 }
@@ -34,7 +38,7 @@ export function playerFactory() {
   declarations: [
     AppComponent,
     HeaderComponent,
-    MobileSearchComponent,
+    SearchComponent,
     MainComponent,
     MobileSelectorComponent,
     CarouselComponent,
@@ -47,7 +51,10 @@ export function playerFactory() {
     FooterComponent,
     RestaurantsTableComponent,
     RestaurantsEditFormComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoginComponent,
+    RegisterComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +67,10 @@ export function playerFactory() {
     ReactiveFormsModule,
     LottieModule.forRoot({ player: playerFactory }),
     DataTablesModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule
 
   ],
   providers: [],

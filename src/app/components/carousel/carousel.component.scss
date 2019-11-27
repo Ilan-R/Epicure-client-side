@@ -1,4 +1,6 @@
 .container-fluid{
-    
-
+    padding-left: 20px;
+    &.desktop{
+        padding: 0 205px 0 205px;
+    }
 }
