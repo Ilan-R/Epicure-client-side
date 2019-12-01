@@ -1,15 +1,57 @@
 <h2 mat-dialog-title>Restaurant editing:</h2>
-<mat-dialog-content class="form" [formGroup]="group" (ngSubmit)="onSubmit()">
-    <label>
-        Restaurants name:
-        <input type=" text" formControlName="name" required>
-    </label>
-    <label>
-        Chefs name:
-        <input type="text" formControlName="chef" required>
-    </label>
+<mat-dialog-content class="form" [formGroup]="group" (ngSubmit)="onSubmit()" fxLayout="row" fxlayoutGap="5px">
+    <div class="col" fxLayout="column" fxlayoutGap="5px">
+        <mat-form-field fxLayout="row">
+            <mat-card-subtitle>Restaurants name:</mat-card-subtitle>
+            <input matInput type=" text" formControlName="name">
+        </mat-form-field>
+        <mat-form-field fxLayout="row">
+            <mat-card-subtitle>Chefs name:</mat-card-subtitle>
+            <input matInput type="text" formControlName="chef">
+        </mat-form-field>
+    </div>
+    <div class="col" fxLayout="column" fxlayoutGap="5px">
+        <!-- max width 50%!! -->
+            <mat-card-subtitle>Sunday</mat-card-subtitle><mat-form-field fxLayout="row">
+            
+            <input matInput type="time" formControlName="sundayOpening">
+            <input matInput type="time" formControlName="sundayClosing">
+        </mat-form-field>
+        <mat-card-subtitle>Monday</mat-card-subtitle>
+        <mat-form-field fxLayout="row">
+            
+            <input matInput type="time" formControlName="mondayOpening">
+            <input matInput type="time" formControlName="mondayClosing">
+        </mat-form-field>
+        <mat-form-field fxLayout="row">
+            <mat-card-subtitle>Tuesday</mat-card-subtitle>
+            <input matInput type="time" formControlName="tuesdayOpening">
+            <input matInput type="time" formControlName="tuesdayClosing">
+        </mat-form-field>
+        <mat-form-field fxLayout="row">
+            <mat-card-subtitle>Wednesday</mat-card-subtitle>
+            <input matInput type="time" formControlName="wednesdayOpening">
+            <input matInput type="time" formControlName="wednesdayClosing">
+        </mat-form-field>
+        <mat-form-field fxLayout="row">
+            <mat-card-subtitle>Thursday</mat-card-subtitle>
+            <input matInput type="time" formControlName="thursdayOpening">
+            <input matInput type="time" formControlName="thursdayClosing">
+        </mat-form-field>
+        <mat-form-field fxLayout="row">
+            <mat-card-subtitle>Friday</mat-card-subtitle>
+            <input matInput type="time" formControlName="fridayOpening">
+            <input matInput type="time" formControlName="fridayClosing">
+        </mat-form-field>
+        <mat-form-field fxLayout="row">
+            <mat-card-subtitle>Saturday</mat-card-subtitle>
+            <input matInput type="time" formControlName="saturdayOpening">
+            <input matInput type="time" formControlName="saturdayClosing">
+        </mat-form-field>
+    </div>
 </mat-dialog-content>
 <mat-dialog-actions>
-        <button mat-button mat-dialog-close (click)="delete()">Delete restaurant</button>
-    <button mat-button mat-dialog-close (click)="onSubmit()" type="submit" [disabled]="!group.valid">Submit changes</button>
+    <button mat-button mat-dialog-close (click)="delete()">Delete restaurant</button>
+    <button mat-button mat-dialog-close (click)="onSubmit()" type="submit" [disabled]="!group.valid">Submit
+        changes</button>
 </mat-dialog-actions>

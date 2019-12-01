@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
@@ -9,7 +10,7 @@ import { MatDialogRef } from '@angular/material';
 })
 export class RegisterComponent implements OnInit {
   fg: FormGroup;
-  constructor(public dialogRef: MatDialogRef<RegisterComponent>, private fb: FormBuilder) { }
+  constructor(private auth: AuthService, public dialogRef: MatDialogRef<RegisterComponent>, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.fg = this.fb.group({

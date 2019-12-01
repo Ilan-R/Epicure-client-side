@@ -16,4 +16,7 @@ export class AuthService {
   login(possibleEmail: string, possiblePassword: string) {
     return this.http.post<any>(this.url + 'login', {email: possibleEmail, password: possiblePassword}, this.config);
   }
+  isAdmin() {
+    return this.http.post<any>(this.url + 'admin', {});
+  }
 }
