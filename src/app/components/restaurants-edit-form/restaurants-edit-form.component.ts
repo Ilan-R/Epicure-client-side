@@ -15,12 +15,26 @@ export class RestaurantsEditFormComponent implements OnInit {
   // name: string;
   // chef: string;
   constructor(private fb: FormBuilder,
-    private restService: RestaurantsService, @Inject(MAT_DIALOG_DATA) public rest: Restaurant) { }
+              private restService: RestaurantsService, @Inject(MAT_DIALOG_DATA) public rest: Restaurant) { }
 
   ngOnInit(): void {
     this.group = this.fb.group({
       name: ['', Validators.required],
-      chef: ['', Validators.required]
+      chef: ['', Validators.required],
+      sundayOpening: [''],
+      sundayClosing: [''],
+      mondayOpening: [''],
+      mondayClosing: [''],
+      tuesdayOpening: [''],
+      tuesdayClosing: [''],
+      wednesdayOpening: [''],
+      wednesdayClosing: [''],
+      thursdayOpening: [''],
+      thursdayClosing: [''],
+      fridayOpening: [''],
+      fridayClosing: [''],
+      saturdayOpening: [''],
+      saturdayClosing: [''],
     });
     this.group.get('name').setValue(this.rest.name);
     this.group.get('chef').setValue(this.rest.chef);
