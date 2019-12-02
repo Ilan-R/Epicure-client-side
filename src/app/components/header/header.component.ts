@@ -29,9 +29,11 @@ export class HeaderComponent implements OnInit {
   }
 
   menuClick() {
-    console.log('menuclick');
-    this.auth.isAdmin().subscribe(() => alert('is admin'),
-    err => alert('isnt an admin'));
+
+    console.log('menuclick'); 
+    this.auth.isAdmin().subscribe((response) => alert('is admin'),
+    err => {console.log(err); alert('not an admin');});
+
   }
   ngOnInit() {
   }

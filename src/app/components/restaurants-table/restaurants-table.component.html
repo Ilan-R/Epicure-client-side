@@ -6,13 +6,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr (click)="onClick(rest)" *ngFor="let rest of restaurants">
+        <tr (click)="onClick(rest.name, rest.chef)" *ngFor="let rest of restaurants">
             <td>{{rest.name}}</td>
             <td>{{rest.chef}}</td>
         </tr>
     </tbody>
 </table>
-<button style="margin: 5px;" (click)="onClick({name: '',chef: ''})">Add a restaurant</button>
+<button style="margin: 5px;" (click)="onClick('', '')">Add a restaurant</button>
 <div class="container" [class.loading]="loading == true" fxLayout="column" fxLayoutAlign="center center">
     <h1 [hidden]="!loading">Working on it!!!</h1>
     <div style="height: 10em;" [hidden]="!loading">

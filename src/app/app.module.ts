@@ -57,10 +57,10 @@ export function playerFactory() {
     MapComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
-    FlexLayoutModule,
+    FlexLayoutModule.withConfig({ssrObserveBreakpoints: ['gt-sm']}),
     HttpClientModule,
     MatButtonModule,
     OwlModule,

@@ -1,5 +1,5 @@
-import { RestaurantsService } from '../../services/restaurants.service';
 import { Component, OnInit } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-main',
@@ -8,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor(private restService: RestaurantsService) { }
+  constructor(private titleService: Title, private metaService: Meta ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.titleService.setTitle('Epicure, best site ever');
+    this.metaService.addTags([
+      {name: 'description', content: 'Search and order from the best restaurants in tel aviv'},
+      {name: 'og:image', content: 'https://source.unsplash.com/random/800x600'}
+    ]);
+  }
 }
