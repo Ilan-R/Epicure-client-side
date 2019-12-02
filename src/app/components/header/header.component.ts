@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private auth: AuthService, private router: Router) { }
 
   navClick() {
     console.log('navclick');
@@ -28,8 +29,8 @@ export class HeaderComponent implements OnInit {
   }
 
   menuClick() {
-    console.log('menuclick');
-    this.router.navigate(['table']);
+    console.log('menuclick');    this.auth.isAdmin().subscribe((response) => alert('is admin'),
+    err => {console.log(err); alert('not an admin');});
   }
   ngOnInit() {
   }

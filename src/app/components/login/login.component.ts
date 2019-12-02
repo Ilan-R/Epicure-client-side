@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   submitted: boolean;
   loginForm: FormGroup;
-  constructor(private auth: AuthService, public dialog: MatDialog, private router: Router, private formBuilder: FormBuilder) { }
+  constructor(private titleService: Title, private metaService: Meta, private auth: AuthService,
+              public dialog: MatDialog, private router: Router, private formBuilder: FormBuilder) { }
   onSubmit() {
     this.submitted = true;
     const { email, password } = this.loginForm.controls;
@@ -22,15 +24,28 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.auth.login(email.value, password.value).subscribe(response => {
-      console.log(response);
-      this.router.navigate(['table']);
+      // console.log(response);
+      this.auth.isAdmin().subscribe(res => {
+        console.log('is admin!');
+        this.router.navigate(['table']);
+      },
+        err => {
+          console.log('not an admin');
+          this.router.navigate(['.']);
+        });
+
     }, err => {
-        if (err && err.error) {
-          alert(err.error.msg);
-        }
-      });
+      if (err && err.error) {
+        alert(err.error.msg);
+      }
+    });
   }
   ngOnInit() {
+    this.titleService.setTitle('Login page');
+    this.metaService.addTags([
+      { name: 'description', content: 'Login and enter culinary wonderland' },
+      { name: 'og:image', content: 'https://source.unsplash.com/random/800x600' }
+    ]);
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
@@ -42,24 +57,8 @@ export class LoginComponent implements OnInit {
     });
     ref.afterClosed().subscribe(result => {
       if (result) {
-        const usr: User = this.getUser(result);
-        this.auth.register(usr).subscribe(response => {
-          console.log(response);
 
-        },
-          error => console.log(error));
       }
     });
-  }
-  getUser(res: any): User {
-    return {
-      first_name: res.first_name,
-      last_name: res.last_name,
-      email: res.email,
-      normal_auth: {
-        email: res.email,
-        password: res.password
-      }
-    };
   }
 }

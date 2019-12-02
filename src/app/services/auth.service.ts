@@ -8,7 +8,8 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
   private url = 'http://localhost:3000/api/';
-  private config = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
+  private config = { headers: new HttpHeaders().set('Content-Type', 'application/json'),
+                     withCredentials: true} //, credentials: 'include', observe: 'response' as 'body' };
   constructor(private http: HttpClient) {}
   register(usr: User): Observable<string> {
     return this.http.post<any>(this.url + 'register', usr, this.config);
@@ -16,4 +17,8 @@ export class AuthService {
   login(possibleEmail: string, possiblePassword: string) {
     return this.http.post<any>(this.url + 'login', {email: possibleEmail, password: possiblePassword}, this.config);
   }
+  isAdmin() {
+    return this.http.get<any>(this.url + 'admin', { responseType: 'text' as 'json', withCredentials: true});
+  }
 }
+

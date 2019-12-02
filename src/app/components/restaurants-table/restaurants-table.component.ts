@@ -7,6 +7,7 @@ import { Restaurant } from '../../interfaces/restaurant';
 import { RestaurantsService } from '../../services/restaurants.service';
 import { RestaurantsEditFormComponent } from '../restaurants-edit-form/restaurants-edit-form.component';
 import 'datatables.net';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-restaurants-table',
@@ -24,12 +25,13 @@ export class RestaurantsTableComponent implements OnInit, OnDestroy {
     path: '/assets/run-hamster-run.json'
   };
 
-  constructor(private route: ActivatedRoute, private router: Router, private restService: RestaurantsService, public dialog: MatDialog) { }
-
-  onClick(rest: Restaurant) {
+  constructor(private metaService: Meta, private titleService: Title, private route: ActivatedRoute, private router: Router,
+              private restService: RestaurantsService, public dialog: MatDialog) { }
+// TODO: check after ssr cahnges!!
+  onClick(nameI: string, chefI: string) {
     if (!this.loading) {
       console.log('clicked');
-      this.router.navigate(['table'], { queryParams: { name: rest.name, chef: rest.chef } });
+      this.router.navigate(['table'], { queryParams: { name: nameI, chef: chefI } });
     }
   }
   tableInit() {
@@ -38,13 +40,18 @@ export class RestaurantsTableComponent implements OnInit, OnDestroy {
       pageLength: 5
     };
     this.restService.getAllRestaurants().subscribe(array => {
-      console.log('array: ', array)
+      console.log('array: ', array);
       this.restaurants = array;
       this.dtTrigger.next();
     },
       err => console.log(err));
   }
   ngOnInit() {
+    this.titleService.setTitle('Admin, edit away');
+    this.metaService.addTags([
+      { name: 'description', content: 'Edit, add and remove restaurants as you please' },
+      { name: 'og:image', content: 'https://source.unsplash.com/random/800x600' }
+    ]);
     this.tableInit();
     this.params$ = this.route.queryParamMap.subscribe(paramaters => {
       const parName: string = paramaters.get('name');
