@@ -1,3 +1,4 @@
+
 import { Router } from '@angular/router';
 import { User } from './../../interfaces/user';
 import { AuthService } from './../../services/auth.service';
@@ -14,7 +15,6 @@ export class RegisterComponent implements OnInit {
   fg: FormGroup;
   constructor(private router: Router, private auth: AuthService,
               public dialogRef: MatDialogRef<RegisterComponent>, private fb: FormBuilder) { }
-
   ngOnInit(): void {
     this.fg = this.fb.group({
       first_name: ['', Validators.required],
