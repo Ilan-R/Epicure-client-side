@@ -8,8 +8,8 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
   private url = 'http://localhost:3000/api/';
-  private config = { headers: new HttpHeaders().set('Content-Type', 'application/json'),
-                     withCredentials: true} //, credentials: 'include', observe: 'response' as 'body' };
+  private config = { headers: new HttpHeaders().set('Content-Type', 'application/json'), responseType: 'text' as 'json',
+                     withCredentials: true, credentials: 'include'}//, observe: 'response' as 'body' };
   constructor(private http: HttpClient) {}
   register(usr: User): Observable<string> {
     return this.http.post<any>(this.url + 'register', usr, this.config);

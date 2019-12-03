@@ -1,3 +1,4 @@
+import { AlerterService } from './../../services/alerter.service';
 import { User } from './../../interfaces/user';
 import { AuthService } from './../../services/auth.service';
 import { RegisterComponent } from './../register/register.component';
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   submitted: boolean;
   loginForm: FormGroup;
   constructor(private titleService: Title, private metaService: Meta, private auth: AuthService,
-              public dialog: MatDialog, private router: Router, private formBuilder: FormBuilder) { }
+              public dialog: MatDialog, private router: Router, private formBuilder: FormBuilder, private alerter: AlerterService) { }
   onSubmit() {
     this.submitted = true;
     const { email, password } = this.loginForm.controls;
@@ -36,7 +37,7 @@ export class LoginComponent implements OnInit {
 
     }, err => {
       if (err && err.error) {
-        alert(err.error.msg);
+        this.alerter.alert(err.error.replace(/"/g, ''));
       }
     });
   }

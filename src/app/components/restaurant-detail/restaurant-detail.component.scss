@@ -3,6 +3,8 @@
     display: table;
     width: 206px;
      height: 338px;
+     text-align: center;
+overflow: hidden;
      &.desktop{
         width: 360px;
          height: 357px;
@@ -14,4 +16,9 @@
     display: table-caption;
     caption-side: bottom;
     width: 100%;
+    padding: 30px 0 30px 0;
+  }
+
+  img{
+      max-height:100%;
   }

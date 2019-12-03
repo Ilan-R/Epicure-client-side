@@ -1,3 +1,4 @@
+import { Dish } from './../../interfaces/dish';
 import { Restaurant } from '../../interfaces/restaurant';
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -9,9 +10,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class RestaurantDetailComponent implements OnInit {
 
   @Input() restaurant: Restaurant;
+  @Input() mode: boolean;
   constructor() { }
 
   ngOnInit() {
   }
 
+  getDisplay(): string {
+    return this.mode ? this.restaurant.chef : ((this.restaurant as unknown) as Dish).ingredients;
+  }
 }

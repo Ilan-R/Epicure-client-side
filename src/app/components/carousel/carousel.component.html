@@ -1,7 +1,7 @@
 <div  class='container-fluid' ngClass.gt-sm="desktop">
-  <owl-carousel [options]="SlideOptions" [items] = restaurants [carouselClasses]="['owl-theme', 'sliding']">
-    <div class="item" *ngFor="let item of restaurants">
-        <app-restaurant-detail [restaurant] = "item"></app-restaurant-detail>
+  <owl-carousel [options]="SlideOptions" [items]="mode ? restaurants : dishes" [carouselClasses]="['owl-theme', 'sliding']">
+    <div class="item" *ngFor="let item of mode ? restaurants : dishes">
+        <app-restaurant-detail [restaurant] = "item" [mode]="mode"></app-restaurant-detail>
     </div>
   </owl-carousel>
 </div>

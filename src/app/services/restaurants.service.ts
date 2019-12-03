@@ -22,11 +22,11 @@ export class RestaurantsService {
   getAllRestaurants(): Observable<Restaurant[]> {
     return this.http.get<Restaurant[]>(this.baseUrl + 'restaurants/all');
   }
-  addRestaurant(name: string, rest: Restaurant): Observable<Restaurant[]> {
+  addRestaurant(rest: Restaurant): Observable<Restaurant[]> {
     console.log('add ' + rest);
-    return this.http.post<Restaurant[]>(this.baseUrl + this.rests + name, rest, this.httpOptions);
+    return this.http.post<Restaurant[]>(this.baseUrl + this.rests + rest._id, rest, this.httpOptions);
   }
-  removeRestaurant(name: string): Observable<Restaurant[]> {
-    return this.http.delete<Restaurant[]>(this.baseUrl + this.rests + name, this.httpOptions);
+  removeRestaurant(id: string): Observable<Restaurant[]> {
+    return this.http.delete<Restaurant[]>(this.baseUrl + this.rests + id, this.httpOptions);
   }
 }

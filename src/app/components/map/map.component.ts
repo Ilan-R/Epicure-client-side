@@ -17,9 +17,7 @@ export class MapComponent implements OnInit {
   mapOptions: google.maps.MapOptions;
   marker: google.maps.Marker;
 
-  ngAfterViewInit() {
-   
-  }
+
   ngOnInit() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
