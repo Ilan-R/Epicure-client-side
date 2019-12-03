@@ -1,6 +1,7 @@
+import { Dish } from './../../interfaces/dish';
 import { RestaurantsService } from '../../services/restaurants.service';
 import { Restaurant } from '../../interfaces/restaurant';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-carousel',
@@ -8,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent implements OnInit {
+  @Input() mode: boolean;
   restaurants: Restaurant[] = [];
+  dishes: Dish[] = [];
   SlideOptions = {
     nav: false, dots: false, autoWidth: true,
     responsive: {
@@ -26,7 +29,7 @@ export class CarouselComponent implements OnInit {
 
   ngOnInit() {
     this.restService.getAllRestaurants().subscribe(rest => {
-      this.restaurants = rest;
+      this.mode ? this.restaurants = rest : this.dishes = rest[0].dishes;
     });
   }
 

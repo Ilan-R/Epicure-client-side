@@ -1,13 +1,15 @@
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  table-layout: fixed;
 }
 
 td, th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
+  cursor: pointer;
+  overflow: hidden;
 }
 
 tr:nth-child(even) {
@@ -30,4 +32,15 @@ tr:nth-child(even) {
   position: fixed;
   background-color:rgba(95,158,160 ,0.4 );
   
+  }
+
+  .button{
+    border: none;
+    margin-left: 15px;
+  }
+  .lottie{
+    height: 10em;
+  }
+  .id{
+    width: 20%;
   }

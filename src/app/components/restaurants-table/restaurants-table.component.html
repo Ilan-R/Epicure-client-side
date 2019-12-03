@@ -1,22 +1,23 @@
 <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
     <thead>
         <tr>
+            <th class="id">ID</th>
             <th>Restaurant's name</th>
             <th>Chef's name</th>
         </tr>
     </thead>
     <tbody>
-        <tr (click)="onClick(rest.name, rest.chef)" *ngFor="let rest of restaurants">
+        <tr (click)="onClick(rest._id)" *ngFor="let rest of restaurants">
+            <td>{{rest._id}}</td>
             <td>{{rest.name}}</td>
             <td>{{rest.chef}}</td>
         </tr>
     </tbody>
 </table>
-<button style="margin: 5px;" (click)="onClick('', '')">Add a restaurant</button>
+<button class="button" mat-stroked-button (click)="onClick('')">Add a restaurant</button>
 <div class="container" [class.loading]="loading == true" fxLayout="column" fxLayoutAlign="center center">
     <h1 [hidden]="!loading">Working on it!!!</h1>
-    <div style="height: 10em;" [hidden]="!loading">
-
+    <div class="lottie" [hidden]="!loading">
         <ng-lottie [options]="options"></ng-lottie>
     </div>
 </div>

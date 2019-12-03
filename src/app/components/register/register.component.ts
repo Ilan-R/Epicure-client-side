@@ -1,3 +1,4 @@
+import { AlerterService } from './../../services/alerter.service';
 
 import { Router } from '@angular/router';
 import { User } from './../../interfaces/user';
@@ -13,7 +14,7 @@ import { MatDialogRef } from '@angular/material';
 })
 export class RegisterComponent implements OnInit {
   fg: FormGroup;
-  constructor(private router: Router, private auth: AuthService,
+  constructor(private router: Router, private auth: AuthService, private alerter: AlerterService,
               public dialogRef: MatDialogRef<RegisterComponent>, private fb: FormBuilder) { }
   ngOnInit(): void {
     this.fg = this.fb.group({
@@ -41,7 +42,7 @@ export class RegisterComponent implements OnInit {
     },
       error => {
         console.log('error on register');
-        alert('This email is taken, how about loging in?');
+        this.alerter.alert('This email is taken, how about loging in?');
         this.fg.get('email').setValue('');
         this.fg.get('password').setValue('');
       });

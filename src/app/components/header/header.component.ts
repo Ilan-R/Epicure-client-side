@@ -1,3 +1,4 @@
+import { AlerterService } from './../../services/alerter.service';
 import { AuthService } from './../../services/auth.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(private alerter: AlerterService, private auth: AuthService, private router: Router) { }
 
   navClick() {
     console.log('navclick');
@@ -30,9 +31,9 @@ export class HeaderComponent implements OnInit {
 
   menuClick() {
 
-    console.log('menuclick'); 
-    this.auth.isAdmin().subscribe((response) => alert('is admin'),
-    err => {console.log(err); alert('not an admin');});
+    console.log('menuclick');
+    this.auth.isAdmin().subscribe((response) => { this.alerter.alert('is admin, redirecting'); this.router.navigate(['table']) },
+      err => { console.log(err); this.alerter.alert('not an admin go away!'); });
 
   }
   ngOnInit() {
