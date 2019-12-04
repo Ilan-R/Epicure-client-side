@@ -9,7 +9,7 @@ import { Restaurant } from '../interfaces/restaurant';
   providedIn: 'root'
 })
 export class RestaurantsService {
- // private baseUrl = 'http://localhost:3000/api/';
+  // private baseUrl = 'http://localhost:3000/api/';
   private baseUrl = 'http://ec2-63-32-104-65.eu-west-1.compute.amazonaws.com/api/';
   private rests = 'restaurants/';
   private httpOptions = {

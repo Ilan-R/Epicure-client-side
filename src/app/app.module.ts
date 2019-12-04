@@ -1,3 +1,5 @@
+import { SearchPipe } from './pipes/search.pipe';
+import {  FilterPipe } from './pipes/Filter.pipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -54,7 +56,9 @@ export function playerFactory() {
     PageNotFoundComponent,
     LoginComponent,
     RegisterComponent,
-    MapComponent
+    MapComponent,
+    FilterPipe,
+    SearchPipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

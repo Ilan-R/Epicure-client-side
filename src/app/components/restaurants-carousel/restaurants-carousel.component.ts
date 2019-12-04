@@ -6,10 +6,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./restaurants-carousel.component.scss']
 })
 export class RestaurantsCarouselComponent implements OnInit {
-
+  filterMode: string;
+  reload = true;
   constructor() { }
-
-  ngOnInit() {
+  all() {
+    this.filterMode = 'all';
+    this.doReload();
   }
-
+  popularity() {
+    this.filterMode = 'popularity';
+    this.doReload();
+  }
+  chef() {
+    this.filterMode = 'chefSort';
+    this.doReload();
+  }
+  name() {
+    this.filterMode = 'nameSort';
+    this.doReload();
+  }
+  ngOnInit() {
+    this.filterMode = 'all';
+    this.doReload();
+  }
+  doReload() {
+    setTimeout(() => this.reload = false);
+    setTimeout(() => this.reload = true);
+  }
 }

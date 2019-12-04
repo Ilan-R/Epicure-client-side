@@ -10,6 +10,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CarouselComponent implements OnInit {
   @Input() mode: boolean;
+  @Input() filterMode: string;
+  @Input() reload: boolean;
   restaurants: Restaurant[] = [];
   dishes: Dish[] = [];
   SlideOptions = {
@@ -33,8 +35,6 @@ export class CarouselComponent implements OnInit {
     });
   }
 
-  onclick() {
-  }
 }
 
 

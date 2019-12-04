@@ -29,18 +29,6 @@ export class RestaurantsEditFormComponent implements OnInit {
 
   }
 
-  // populateControls() {
-  //   this.daysNames.forEach((name) => {
-  //     const arr = this.getOpeningAndClosing(name);
-  //     let controlName = name.concat('Opening');
-  //     this.group.addControl(controlName, this.fb.control('', []));
-  //     this.group.get(controlName).setValue(arr[0]);
-  //     controlName = name.concat('Closing');
-  //     this.group.addControl(controlName, this.fb.control('', []));
-  //     this.group.get(controlName).setValue(arr[1]);
-  //   });
-  // }
-
   getGroup(): FormGroup {
     return this.fb.group({
       name: ['', Validators.required],
@@ -48,20 +36,7 @@ export class RestaurantsEditFormComponent implements OnInit {
     });
   }
 
-  // getOpeningAndClosing(day: string): string[] {
-  //   const index = this.daysNames.indexOf(day);
-  //   const array: string[] = Array(2);
-  //   if (this.rest.opening_hours[index].hours.length > 0) {
-  //     array[0] = this.rest.opening_hours[index].hours[0].split('T')[1];
-  //     array[1] = this.rest.opening_hours[index].hours[1].split('T')[1];
-  //   }
-  //   return array;
-  // }
-
   onSubmit(): void {
-    // this.restService.addRestaurant(this.rest.name !== '' ? this.rest.name : this.group.get('name').value,
-    //   { name: this.group.get('name').value, chef: this.group.get('chef').value })
-    //   .subscribe();
     const toPost = this.rest._id === '' ? this.getNewRestaurant() : this.updateCurrentRestaurant();
     console.log(toPost);
     this.restService.addRestaurant(toPost).subscribe();
@@ -74,8 +49,7 @@ export class RestaurantsEditFormComponent implements OnInit {
       creation_date: this.rest.creation_date,
       image: this.rest.image,
       popularity: this.rest.popularity,
-      dishes: this.rest.dishes,
-     // opening_hours: this.getBusinessHours()
+      dishes: this.rest.dishes
     };
   }
   getNewRestaurant(): Restaurant {
@@ -86,8 +60,7 @@ export class RestaurantsEditFormComponent implements OnInit {
       creation_date: new Date(),
       image: 'https://source.unsplash.com/random/800x600?sig='.concat(Math.random().toString()),
       popularity: this.calculatePopularity(),
-      dishes: this.getDishes(),
-     // opening_hours: this.getBusinessHours()
+      dishes: this.getDishes()
     };
 
   }

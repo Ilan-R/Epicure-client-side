@@ -39,6 +39,10 @@ export class MapComponent implements OnInit {
     }
 
   }
+
+  ngAdterViewInit() {
+
+  }
   mapInitializer() {
     this.map = new google.maps.Map(this.gmap.nativeElement, this.mapOptions);
     this.marker.setMap(this.map);

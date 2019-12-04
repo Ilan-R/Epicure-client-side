@@ -1,4 +1,10 @@
 <div class="title" fxLayout="row" fxLayoutAlign="center end">
     THE POPULAR RESTAURANTS IN EPICURE :
 </div>
-<app-carousel [mode]="true" ></app-carousel>
+<div class="buttons" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="30px">
+    <div class="button" (click)="all()">All</div>
+    <div class="button" (click)="popularity()">Popularity</div>
+    <div class="button" (click)="name()">Sort by name</div>
+    <div class="button" (click)="chef()">Sort by chef's name</div>
+</div>
+<app-carousel [reload]="reload" [filterMode]="filterMode" [mode]="true" ></app-carousel>

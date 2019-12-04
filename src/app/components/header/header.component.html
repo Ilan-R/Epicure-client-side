@@ -1,4 +1,4 @@
-<div class="header" fxLayout="row" fxShow fxHide.gt-sm>
+<div class="header" fxLayout="row" *ngIf="(isMobile | async)?.matches" >
     <div class="section" fxLayoutAlign="start center">
         <button class="nav-button buttons" (click)="navClick()">
             <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 20 14">
@@ -48,7 +48,7 @@
 
 
 
-<div class="header-desktop" fxLayout="row" fxHide fxShow.gt-sm>
+<div class="header-desktop" *ngIf="!(isMobile | async)?.matches" fxLayout="row" >
 
     <div class="left section" fxLayout="row" fxLayoutAlign="start center">
 

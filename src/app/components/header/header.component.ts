@@ -1,7 +1,9 @@
+import { Observable } from 'rxjs';
 import { AlerterService } from './../../services/alerter.service';
 import { AuthService } from './../../services/auth.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +11,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor(private alerter: AlerterService, private auth: AuthService, private router: Router) { }
+  isMobile: Observable<BreakpointState>;
+  constructor(private bpObserver: BreakpointObserver, private alerter: AlerterService, private auth: AuthService, private router: Router) { }
 
   navClick() {
     console.log('navclick');
@@ -37,6 +39,7 @@ export class HeaderComponent implements OnInit {
 
   }
   ngOnInit() {
+    this.isMobile = this.bpObserver.observe([Breakpoints.Handset]);
   }
 
 }

@@ -1,5 +1,7 @@
 .container-fluid{
     padding-left: 20px;
+    max-height: 338px;
+    overflow: hidden;
     &.desktop{
         padding: 0 205px 0 205px;
     }
