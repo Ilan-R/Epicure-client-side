@@ -38,7 +38,7 @@
     "domino": "^2.1.3",
     "express": "^4.15.2",
     "hammerjs": "^2.0.8",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "lottie-web": "^5.5.9",
     "ngx-lottie": "^5.2.0",
     "ngx-owl-carousel": "^2.0.7",
