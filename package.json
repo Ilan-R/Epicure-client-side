@@ -33,7 +33,7 @@
     "@types/googlemaps": "^3.38.0",
     "angular-datatables": "^8.0.0",
     "bson-objectid": "^1.3.0",
-    "datatables.net": "^1.10.20",
+    "datatables.net": "^1.10.22",
     "datatables.net-dt": "^1.10.20",
     "domino": "^2.1.3",
     "express": "^4.15.2",
